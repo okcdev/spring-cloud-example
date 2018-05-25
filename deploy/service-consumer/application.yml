@@ -1,0 +1,21 @@
+server:
+  port: 8088
+
+spring:
+  application:
+    name: SERVICE-CONSUMER
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://service-discovery1:8761/eureka/  #eurake服务注册地址
+      peer1: http://service-discovery1:8761/eureka/
+      peer2: http://service-discovery2:8762/eureka/
+    region: zone1
+    availability-zones:
+      zone1: 'peer1,peer2'
+      zone2: 'peer2,peer1'
+
+feign:
+  hystrix:
+    enabled: true

@@ -1,0 +1,12 @@
+server:
+  port: 8762
+
+spring:
+  profiles:service-discovery2
+
+eureka:
+  instance:
+    hostname:service-discovery2
+  client:
+    serviceUrl:
+      defaultZone: http://service-discovery1:8761/eureka/

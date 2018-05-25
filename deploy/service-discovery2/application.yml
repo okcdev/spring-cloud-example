@@ -1,0 +1,12 @@
+server:
+  port: 8761
+
+spring:
+  profiles:service-discovery1
+
+eureka:
+  instance:
+    hostname:service-discovery1 
+  client:
+    serviceUrl:
+      defaultZone: http://service-discovery2:8762/eureka/

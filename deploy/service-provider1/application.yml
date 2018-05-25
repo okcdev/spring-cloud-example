@@ -1,0 +1,18 @@
+server:
+  port: 8001  #服务器端口
+
+spring:
+  application:
+    name: SERVICE-PROVIDER
+
+eureka:
+  client:
+    serviceUrl:
+      peer1: http://service-discovery1:8761/eureka/
+      peer2: http://service-discovery2:8762/eureka/
+    region: zone1
+    availability-zones:
+      zone2: 'peer2,peer1'
+      zone1: 'peer1,peer2'
+    healthcheck:
+      enabled: true
